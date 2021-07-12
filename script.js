@@ -3,11 +3,6 @@ const balls = document.querySelectorAll('.ball');
 const answers = document.querySelector('#answer');
 const resetBttn = document.querySelector('#reset-game');
 
-const colors = document.querySelector('#rgb-color');
-const balls = document.querySelectorAll('.ball');
-const answers = document.querySelector('#answer');
-const resetBttn = document.querySelector('#reset-game');
-
 function randomColors() {
   let rgb = [];
   for (let i = 0; i < balls.length; i += 1){
