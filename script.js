@@ -7,11 +7,12 @@ const randomColor = Math.floor(Math.random() * 6);
 let counter = 0;
 
 resetBttn.addEventListener('click', () => {
-  answers.innerText = 'Escolha uma cor.';
   randomBallsColors()
 });
 
 function randomBallsColors() {
+  scores.innerText = 'Score: ' + counter;
+  answers.innerText = 'Escolha uma cor.';
   let rgb = [];
   for (let i = 0; i < balls.length; i += 1){
     for (let j = 0; j < 3; j += 1) {
@@ -27,9 +28,9 @@ randomBallsColors();
 document.addEventListener('click', (event) => {
   if (event.target.className === 'ball'){
     if (colors.innerText === event.target.style.backgroundColor.slice(3)) {
-      answers.innerText = 'Acertou';
+      answers.innerText = 'Acertou!';
       counter += 3;
-      scores.innerText = counter;
+      scores.innerText = 'Score: ' + counter;
     } else {
       answers.innerText = 'Errou! Tente novamente!';
     }
