@@ -4,33 +4,32 @@ const scores = document.querySelector('#score');
 const answers = document.querySelector('#answer');
 const resetBttn = document.querySelector('#reset-game');
 const randomColor = Math.floor(Math.random() * 6);
+const rgb = [];
 let counter = 0;
 
-resetBttn.addEventListener('click', () => {
-  randomBallsColors()
-});
-
 function randomBallsColors() {
-  scores.innerText = 'Score: ' + counter;
+  scores.innerText = `Score: ${counter}`;
   answers.innerText = 'Escolha uma cor.';
-  let rgb = [];
-  for (let i = 0; i < balls.length; i += 1){
+  for (let i = 0; i < balls.length; i += 1) {
     for (let j = 0; j < 3; j += 1) {
       rgb[j] = Math.round(Math.random() * 255);
     }
-    balls[i].style.backgroundColor = "rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")";
-    balls[i].addEventListener('click', resetBttn);
+    balls[i].style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
   }
   colors.innerText = balls[randomColor].style.backgroundColor.slice(3);
 }
 randomBallsColors();
 
+resetBttn.addEventListener('click', () => {
+  randomBallsColors();
+});
+
 document.addEventListener('click', (event) => {
-  if (event.target.className === 'ball'){
+  if (event.target.className === 'ball') {
     if (colors.innerText === event.target.style.backgroundColor.slice(3)) {
       answers.innerText = 'Acertou!';
       counter += 3;
-      scores.innerText = 'Score: ' + counter;
+      scores.innerText = `Score: ${counter}`;
     } else {
       answers.innerText = 'Errou! Tente novamente!';
     }
