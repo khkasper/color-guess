@@ -9,7 +9,7 @@ let counter = 0;
 
 function randomBallsColors() {
   scores.innerText = `Score: ${counter}`;
-  answers.innerText = 'Escolha uma cor.';
+  answers.innerText = 'Escolha uma cor';
   for (let i = 0; i < balls.length; i += 1) {
     for (let j = 0; j < 3; j += 1) {
       rgb[j] = Math.round(Math.random() * 255);
