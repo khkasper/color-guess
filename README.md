@@ -14,7 +14,7 @@
 
 - [x] 3 - Adicione à página opções de cores para serem adivinhadas
 
-- [x]4 - Adicione cores nas bolas, elas devem ser geradas dinâmicamente
+- [x] 4 - Adicione cores nas bolas, elas devem ser geradas dinâmicamente
 
 - [x] 5 - Clicar em um circulo colorido, deve ser mostrado um texto indicando se está correto
 
